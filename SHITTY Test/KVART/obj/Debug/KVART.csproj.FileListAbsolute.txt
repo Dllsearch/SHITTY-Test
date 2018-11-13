@@ -1,0 +1,21 @@
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\bin\Debug\KVART.exe.config
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\bin\Debug\KVART.exe
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\bin\Debug\KVART.pdb
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\obj\Debug\KVART.csprojResolveAssemblyReference.cache
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\obj\Debug\KVART.Form1.resources
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\obj\Debug\KVART.Form2.resources
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\obj\Debug\KVART.Properties.Resources.resources
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\obj\Debug\KVART.csproj.GenerateResource.Cache
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\obj\Debug\KVART.exe
+c:\users\home\documents\visual studio 2013\Projects\KVART\KVART\obj\Debug\KVART.pdb
+C:\Users\user\Desktop\KVART\KVART\bin\Debug\KVART.exe.config
+C:\Users\user\Desktop\KVART\KVART\bin\Debug\KVART.exe
+C:\Users\user\Desktop\KVART\KVART\bin\Debug\KVART.pdb
+C:\Users\user\Desktop\KVART\KVART\obj\Debug\KVART.csprojAssemblyReference.cache
+C:\Users\user\Desktop\KVART\KVART\obj\Debug\KVART.Form1.resources
+C:\Users\user\Desktop\KVART\KVART\obj\Debug\KVART.Form2.resources
+C:\Users\user\Desktop\KVART\KVART\obj\Debug\KVART.Properties.Resources.resources
+C:\Users\user\Desktop\KVART\KVART\obj\Debug\KVART.csproj.GenerateResource.cache
+C:\Users\user\Desktop\KVART\KVART\obj\Debug\KVART.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\KVART\KVART\obj\Debug\KVART.exe
+C:\Users\user\Desktop\KVART\KVART\obj\Debug\KVART.pdb
