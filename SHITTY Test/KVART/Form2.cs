@@ -9,25 +9,25 @@ namespace SHITTYTEST
 {
     public partial class Form2 : Form
     {
-        //Sorry 4 my bad english
-        int questions; //Question amount
-        string[] askaq; //Questions text
-        int[] answers; //Answers
-        string[][] qus; //Answers text
-        int ansttl; //Amount of true questions???
-        string[] trueanswers; //True questions
-        int radio = 0, check = 1, text = 2; //enum surrogate :3
-        int[] qtypes; //questions type (enum surrogate)
 
-        string[] patharr; //4 separation path
-        string[] tnarr; //separate name
-        bool writetype; //write text, not answnum
-        bool checkTest; //Check test
-        string test; //PATH
-        int i=0; //counter...
-        string studen; //student name
-        string[] answ; //answers
-        int tru; //student's true answers
+        int questions; //вопросов
+        string[] askaq; // Текст вопроса
+        int[] answers; // Ответы
+        string[][] qus; //Текст ответов
+        int ansttl; //количество указаннных правилььных ответов?
+        string[] trueanswers; //Верные ответы
+        int radio = 0, check = 1, text = 2; //enum заменитель :3
+        int[] qtypes; //типы вопросов (enum не нужен - eнн)
+
+        string[] patharr; //для разбивки пути на куски
+        string[] tnarr; //отделить имя и расширение
+        bool writetype; // Галка записи текста ответа
+        bool checkTest; // Галка проверки теста
+        string test; // ПУТь
+        int i=0; // Кунтер
+        string studen; //Имя Имярекович
+        string[] answ; //ответы
+        int tru; //Кол-во верных ответов Имя Имярековича
 
         public Form2(int oquestions, string otest, string studenb, bool wtype, bool chktst)
         {
@@ -52,7 +52,7 @@ namespace SHITTYTEST
             testParser(test);
             answersVisibler(answers[i], qtypes[i]);
             toolStripProgressBar1.Maximum = questions;
-            toolStripStatusLabel1.Text = "Question " + (1 + i) + "/" + questions;
+            toolStripStatusLabel1.Text = "Вопрос " + (1 + i) + "/" + questions;
             label1.Text = askaq[i];
         }
         
@@ -117,11 +117,11 @@ namespace SHITTYTEST
 
             if (((answtype == radio) || (answtype == check)) && ((qstamnt > 8) || (qstamnt < 1)))
                 {
-                    MessageBox.Show(this, "Error in file:\nin question " + qstamnt + " answers\nFor 1 question 1-8 answers.", "ERR IN TEST FILE", MessageBoxButtons.OK);
+                    MessageBox.Show(this, "В файле обнаружена ошибка:\nВ ВОПРОСЕ УКАЗАНО " + qstamnt + " ОТВЕТОВ\nДля одного вопроса от 1 до 8 ответов.\nВозможны ошибки при отображении ответов.", "ОШИБКА В ФАЙЛЕ ТЕСТА", MessageBoxButtons.OK);
                 }
             else if ((answtype < radio) || (answtype > text))
             {
-                MessageBox.Show(this, "Error in file:\nin question " + answtype + " answertype\nTest can have only 0/1/2 answertypes.", "ERR IN TEST FILE", MessageBoxButtons.OK);
+                MessageBox.Show(this, "В файле обнаружена ошибка:\nВ ВОПРОСЕ УКАЗАН " + answtype + " ТИП ОТВЕТОВ\nТипы ответов только 0-2.\nВозможны ошибки при отображении ответов.", "ОШИБКА В ФАЙЛЕ ТЕСТА", MessageBoxButtons.OK);
             }
             else if (answtype == radio)
             {
@@ -147,7 +147,7 @@ namespace SHITTYTEST
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if ( i<questions && MessageBox.Show(this, "If you exit now, the answers will be saved to a file !!!.", "Attention!!!", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            if ( i<questions && MessageBox.Show(this, "Если вы прекратите сейчас, то ответы буду сохранены в файл.", "ВНИМАНИЕ!!!", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {
                 File.WriteAllLines(".\\results\\" + studen + " " + patharr.Last() + ".txt", answ);
                 /*
@@ -167,7 +167,7 @@ namespace SHITTYTEST
                     {
                         if (answ[assa] == trueanswers[assa]) tru++; 
                     }
-                    MessageBox.Show("You scored: "+tru+" of "+ansttl+".");
+                    MessageBox.Show("Вы набрали: "+tru+" баллов из "+ansttl+".");
                 }
                 File.WriteAllLines(".\\results\\" + studen + " " + tnarr[0] + ".txt", answ);
                 /*
@@ -274,7 +274,7 @@ namespace SHITTYTEST
             else if (qtypes[i] == text) { textBoxShit(); return text; }
             else
             {
-                MessageBox.Show(this, "Error in file: unknown answertype.", "ERR IN TEST FILE", MessageBoxButtons.OK);
+                MessageBox.Show(this, "Ошибка в файле теста - неизвестный тип ответов на вопрос.\nВозможны ошибки при записи ответов", "ОШИБКА");
                 return (-1);
             }
         }
@@ -290,7 +290,7 @@ namespace SHITTYTEST
             toolStripProgressBar1.Value = i;
             if (i<(questions))
             {
-                toolStripStatusLabel1.Text = "Question " + (1 + i) + "/" + questions;
+                toolStripStatusLabel1.Text = "Вопрос " + (1 + i) + "/" + questions;
                 label1.Text = askaq[i];
                 answersVisibler(answers[i], qtypes[i]);
             }
@@ -298,7 +298,7 @@ namespace SHITTYTEST
             {
                 button1.Hide();
                 //textBox1.AppendText("НеИзВеСтНо");
-                MessageBox.Show("That's all, mf's!");
+                MessageBox.Show("Ошибка! \nПодпрограмма для работы с БД недоступна.");
             }
         }
     }

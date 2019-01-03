@@ -28,14 +28,31 @@ C:\Users\user\Desktop\shitty test solution\ShittyTest\KVART\bin\Debug\SHITTY TES
 C:\Users\user\Desktop\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form1.resources
 C:\Users\user\Desktop\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form2.resources
 C:\Users\user\Desktop\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form3.resources
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\bin\Debug\SHITTY TEST.exe.config
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\bin\Debug\SHITTY TEST.exe
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\bin\Debug\SHITTY TEST.pdb
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\obj\Debug\SHITTY.csprojAssemblyReference.cache
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Form1.resources
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Form2.resources
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Properties.Resources.resources
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\obj\Debug\SHITTY.csproj.GenerateResource.cache
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\obj\Debug\SHITTY.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\obj\Debug\SHITTY TEST.exe
-C:\Users\user\Desktop\shitty test solution\SHITTY Test\KVART\obj\Debug\SHITTY TEST.pdb
+F:\shitty test solution\ShittyTest\KVART\bin\Debug\SHITTY TEST.exe.config
+F:\shitty test solution\ShittyTest\KVART\bin\Debug\SHITTY TEST.exe
+F:\shitty test solution\ShittyTest\KVART\bin\Debug\SHITTY TEST.pdb
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTY.csprojAssemblyReference.cache
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form1.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form2.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form3.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form4.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Properties.Resources.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.UserControl1.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.UserControl2.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.UserControl3.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.UserControl4.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.UserControl5.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTY.csproj.GenerateResource.cache
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTY.csproj.CoreCompileInputs.cache
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTY TEST.exe
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTY TEST.pdb
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form5.resources
+F:\shitty test solution\ShittyTest\KVART\bin\Debug\LiteDB.dll
+F:\shitty test solution\ShittyTest\KVART\bin\Debug\LiteDB.xml
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTY.csproj.CopyComplete
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.F1BKP.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Login.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.offline.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.register.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form6.resources
+F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.testerv3.resources
