@@ -1,1 +1,0 @@
-{"_id":{"$guid":"23a0c4d7-ce3b-4512-a505-4e3ef31089a7"},"Username":"kurortnik452","Password":"7355608","Name":"\u0415\u0433\u043e\u0440\u0443\u0448\u043a\u0430","Permissions":"admin"}
