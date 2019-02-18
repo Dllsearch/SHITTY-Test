@@ -56,3 +56,31 @@ F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.offline.resources
 F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.register.resources
 F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.Form6.resources
 F:\shitty test solution\ShittyTest\KVART\obj\Debug\SHITTYTEST.testerv3.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.F1BKP.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Launcher.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.testerv1.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Editor.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.testerv3.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Form4.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Form5.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Form6.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Login.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.offline.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.register.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.UserControl1.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.UserControl2.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.UserControl3.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.UserControl4.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.UserControl5.resources
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY.csproj.GenerateResource.cache
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY TEST.exe
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY TEST.pdb
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\bin\Debug\SHITTY TEST.exe.config
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\bin\Debug\SHITTY TEST.exe
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\bin\Debug\SHITTY TEST.pdb
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\bin\Debug\LiteDB.dll
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\bin\Debug\LiteDB.xml
+C:\Users\admin\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY.csproj.CopyComplete

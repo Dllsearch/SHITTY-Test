@@ -1,6 +1,6 @@
 ﻿namespace SHITTYTEST
 {
-    partial class Form5
+    partial class PicView
     {
         /// <summary>
         /// Required designer variable.
@@ -41,15 +41,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Form5
+            // PicView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 77);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form5";
-            this.Text = "Form5";
+            this.Name = "PicView";
+            this.Text = "PicView";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

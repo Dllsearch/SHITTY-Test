@@ -1,6 +1,6 @@
 ﻿namespace SHITTYTEST
 {
-    partial class Form6
+    partial class TestDesk
     {
         /// <summary>
         /// Required designer variable.
@@ -152,7 +152,7 @@
             this.listBox2.Size = new System.Drawing.Size(288, 355);
             this.listBox2.TabIndex = 29;
             // 
-            // Form6
+            // TestDesk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,8 +169,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form6";
-            this.Text = "Form6";
+            this.Name = "TestDesk";
+            this.Text = "TestDesk";
             this.ResumeLayout(false);
             this.PerformLayout();
 

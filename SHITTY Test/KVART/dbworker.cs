@@ -9,6 +9,10 @@ using LiteDB;
 
 namespace SHITTYTEST
 {
+    /*  Класс для работы с БД
+     * Методы записи тетов, загрузки файлов, получения тестов
+     * Редактирования записей, работа с пользователями
+    */
     class dbworker
     {
         public void addResult(user user, int bs, string tstnm)

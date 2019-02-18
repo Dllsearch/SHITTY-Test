@@ -13,7 +13,8 @@ using SHITTYTEST;
 
 namespace SHITTYTEST
 {
-    public partial class Form3 : Form
+    // Редактор тестов
+    public partial class Editor : Form
     {
         int[] qstep;
         int qvalue;
@@ -292,7 +293,7 @@ namespace SHITTYTEST
             groupBox5.Show();
         }
 
-        public Form3()
+        public Editor()
         {
             InitializeComponent();
             initNEO();
@@ -783,7 +784,7 @@ namespace SHITTYTEST
 
         void callPic (int answerN)
         {
-            Form5 form = new Form5(compared.questions[compared.tamedCounter].answerspic[answerN]);
+            PicView form = new PicView(compared.questions[compared.tamedCounter].answerspic[answerN]);
             form.Show();
         }
 

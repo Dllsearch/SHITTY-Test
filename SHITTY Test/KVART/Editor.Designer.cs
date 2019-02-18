@@ -1,6 +1,6 @@
 ﻿namespace SHITTYTEST
 {
-    partial class Form3
+    partial class Editor
     {
         /// <summary>
         /// Required designer variable.
@@ -940,7 +940,7 @@
             this.radioButton12.UseVisualStyleBackColor = true;
             this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
             // 
-            // Form3
+            // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -962,8 +962,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "Editor";
+            this.Text = "Editor";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.statusStrip1.ResumeLayout(false);

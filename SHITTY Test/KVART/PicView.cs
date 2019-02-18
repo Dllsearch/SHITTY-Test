@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SHITTYTEST
 {
-    public partial class Form5 : Form
+    public partial class PicView : Form
     {
-        public Form5(Image image)
+        public PicView(Image image)
         {
             InitializeComponent();
             pictureBox1.Image = image;

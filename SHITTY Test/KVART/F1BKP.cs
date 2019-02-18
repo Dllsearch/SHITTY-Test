@@ -58,7 +58,7 @@ namespace SHITTYTEST
                 questions = Convert.ToInt32(file.ReadLine());
                 file.Close();
                 studen = textBox1.Text;
-                Form2 form = new Form2(questions, test, studen, checkBox1.Checked, checkBox2.Checked);
+                testerv1 form = new testerv1(questions, test, studen, checkBox1.Checked, checkBox2.Checked);
                 this.Hide();
                 form.ShowDialog();
             }
@@ -88,7 +88,7 @@ namespace SHITTYTEST
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form3 form = new Form3();
+            Editor form = new Editor();
             this.Hide();
             form.ShowDialog();
             Show();

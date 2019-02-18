@@ -25,35 +25,35 @@ namespace SHITTYTEST
                 MessageBox.Show("ПРАВА: " + user.Permissions);
                 if (user.Permissions == user.permtype.admin)
                 {
-                    Form6 form = new Form6(user);
+                    TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
                     Close();
                 }
                 else if (user.Permissions == user.permtype.teacher)
                 {
-                    Form6 form = new Form6(user);
+                    TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
                     Close();
                 }
                 else if (user.Permissions == user.permtype.studen)
                 {
-                    Form6 form = new Form6(user);
+                    TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
                     Close();
                 }
                 else if (user.Permissions == user.permtype.cheater)
                 {
-                    Form6 form = new Form6(user);
+                    TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
                     Close();
                 }
                 else if (user.Permissions == user.permtype.CAHR)
                 {
-                    Form6 form = new Form6(user);
+                    TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
                     Close();

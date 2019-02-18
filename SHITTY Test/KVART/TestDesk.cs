@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SHITTYTEST
 {
-    public partial class Form6 : Form
+    public partial class TestDesk : Form
     {
         dbworker dbworker = new dbworker();
         string[][] resultsmx;
@@ -21,7 +21,7 @@ namespace SHITTYTEST
         user User = new user();
         string link;
 
-        public Form6(user u)
+        public TestDesk(user u)
         {
             InitializeComponent();
             User = u;
