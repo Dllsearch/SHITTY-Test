@@ -44,9 +44,14 @@ namespace SHITTYTEST
             Tests = dbworker.getTests();
             Tests.OrderBy(x => x.Name);
             permVis();
+
+            /// TODO - GO F*CK YOUR BRAIN YOURSELF !!! 
+            ///     brain
+
             listBox1.Items.AddRange(Tests.Select(x => x.Name).ToArray());
             //listView1.Items.Add()
             resultsmx = dbworker.getResultsString();
+            dataGridView1.RowCount = resultsmx.Length;
             listView1.Items.Clear();
             //ListViewItem[] item = new ListViewItem[resultsmx.Length];
             for (int x = 0; x < resultsmx.Length; x++)
@@ -63,6 +68,8 @@ namespace SHITTYTEST
                 listView1.Items.Add(item[x]);
                 */
             }
+            dataGridView1.AutoGenerateColumns = true;
+            for (int row = 0; row < resultsmx.Length; row++) for (int col = 0; col < dataGridView1.ColumnCount; col++) dataGridView1[col, row].Value = resultsmx[row][col].ToString();
             //listBox1.Items.AddRange(animal.Select(x => x.name).ToArray());
         }
 
