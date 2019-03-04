@@ -52,12 +52,12 @@ namespace SHITTYTEST
             //listView1.Items.Add()
             resultsmx = dbworker.getResultsString();
             dataGridView1.RowCount = resultsmx.Length;
-            listView1.Items.Clear();
+            //listView1.Items.Clear();
             //ListViewItem[] item = new ListViewItem[resultsmx.Length];
             for (int x = 0; x < resultsmx.Length; x++)
             {
                 //listView1.Columns.Add()
-                listView1.Items.Add(resultsmx[x][0]);
+                //listView1.Items.Add(resultsmx[x][0]);
                 //item[x] = new ListViewItem();
                 /*
                 item[x].SubItems.Add(resultsmx[x][0]);
@@ -160,7 +160,7 @@ namespace SHITTYTEST
             }
             else MessageBox.Show("Выберите существующий тест из списка!");
         }
-
+        /*
         private void listView1_ItemActivate(object sender, EventArgs e)
         {
             int i = listView1.SelectedIndices[0];
@@ -168,5 +168,6 @@ namespace SHITTYTEST
             listBox2.Items.Clear();
             listBox2.Items.AddRange(resultsmx[i]);
         }
+        */
     }
 }
