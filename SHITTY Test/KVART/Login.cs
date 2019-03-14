@@ -15,11 +15,11 @@ namespace SHITTYTEST
         {
             InitializeComponent();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             dbworker dbworker = new dbworker();
-            user user = dbworker.login(textBox1.Text, maskedTextBox1.Text);
+            user user = dbworker.login(textBox1.Text, textBox2.Text);
             if (user != null)
             {
                 MessageBox.Show("ПРАВА: " + user.Permissions);
@@ -28,35 +28,35 @@ namespace SHITTYTEST
                     TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
-                    Close();
+                    Show();
                 }
                 else if (user.Permissions == user.permtype.teacher)
                 {
                     TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
-                    Close();
+                    Show();
                 }
                 else if (user.Permissions == user.permtype.studen)
                 {
                     TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
-                    Close();
+                    Show();
                 }
                 else if (user.Permissions == user.permtype.cheater)
                 {
                     TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
-                    Close();
+                    Show();
                 }
                 else if (user.Permissions == user.permtype.CAHR)
                 {
                     TestDesk form = new TestDesk(user);
                     Hide();
                     form.ShowDialog();
-                    Close();
+                    Show();
                 }
             }
         }

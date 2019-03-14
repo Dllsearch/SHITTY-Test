@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SHITTYTEST
@@ -80,6 +81,7 @@ namespace SHITTYTEST
                 button2.Hide();
                 button4.Hide();
                 button5.Hide();
+                button8.Hide();
                 textBox1.Hide();
                 textBox2.Hide();
                 label1.Hide();
@@ -160,14 +162,55 @@ namespace SHITTYTEST
             }
             else MessageBox.Show("Выберите существующий тест из списка!");
         }
-        /*
-        private void listView1_ItemActivate(object sender, EventArgs e)
+        
+        private void button9_Click(object sender, EventArgs e)
         {
-            int i = listView1.SelectedIndices[0];
-            string s = listView1.Items[i].Text;
-            listBox2.Items.Clear();
-            listBox2.Items.AddRange(resultsmx[i]);
+            Close();
         }
-        */
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            resultsmx = dbworker.getResultsString();
+            int row = 0;
+            for (int x = 0; x < resultsmx.Length; x++)
+            {
+                if ((resultsmx[x][0].IndexOf(textBox5.Text, StringComparison.OrdinalIgnoreCase) != -1) && (resultsmx[x][1].IndexOf(textBox4.Text, StringComparison.OrdinalIgnoreCase) != -1) && (resultsmx[x][2].IndexOf(textBox7.Text, StringComparison.OrdinalIgnoreCase) != -1) && (resultsmx[x][4].IndexOf(textBox6.Text, StringComparison.OrdinalIgnoreCase) != -1))
+                {
+                    dataGridView1.Rows.Add();
+                    for (int col = 0; col < dataGridView1.ColumnCount; col++)
+                    {
+                        dataGridView1[col, row].Value = resultsmx[x][col].ToString();
+                    }
+                    row++;
+                }
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Editor form = new Editor();
+            this.Hide();
+            form.ShowDialog();
+            Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            /*
+            listBox1.Items.Clear(); p => p.Genres.Any(x => listOfGenres.Contains(x)
+ 
+             listBox1.Items.AddRange(Tests.Where(x => Name.Contains(textBox3.Text).ToArray());
+             */
+        }
+        /*
+private void listView1_ItemActivate(object sender, EventArgs e)
+{
+int i = listView1.SelectedIndices[0];
+string s = listView1.Items[i].Text;
+listBox2.Items.Clear();
+listBox2.Items.AddRange(resultsmx[i]);
+}
+*/
     }
 }
