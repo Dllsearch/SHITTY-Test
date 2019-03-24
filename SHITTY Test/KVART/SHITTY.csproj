@@ -172,7 +172,6 @@
     </Compile>
     <Compile Include="userdb.cs" />
     <Compile Include="user.cs" />
-    <Compile Include="usredb.cs" />
     <EmbeddedResource Include="F1BKP.resx">
       <DependentUpon>F1BKP.cs</DependentUpon>
     </EmbeddedResource>

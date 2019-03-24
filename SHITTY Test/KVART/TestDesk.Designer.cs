@@ -101,11 +101,13 @@
             // 
             // listBox1
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 16);
+            this.listBox1.Location = new System.Drawing.Point(3, 42);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(296, 507);
+            this.listBox1.Size = new System.Drawing.Size(296, 338);
             this.listBox1.TabIndex = 26;
             // 
             // dataGridView1
@@ -159,18 +161,16 @@
             // 
             // textBox3
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(0, 0);
+            this.textBox3.Location = new System.Drawing.Point(0, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 20);
+            this.textBox3.Size = new System.Drawing.Size(215, 20);
             this.textBox3.TabIndex = 31;
             // 
             // button6
             // 
-            this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(209, 0);
+            this.button6.Location = new System.Drawing.Point(221, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(75, 21);
             this.button6.TabIndex = 32;
             this.button6.Text = "Найти";
             this.button6.UseVisualStyleBackColor = true;
@@ -273,6 +273,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(6, 17);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(69, 17);
@@ -288,7 +289,6 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(70, 17);
             this.radioButton2.TabIndex = 47;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Баллами";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -296,7 +296,6 @@
             // 
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(173, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(152, 40);
@@ -313,6 +312,7 @@
             this.button11.TabIndex = 49;
             this.button11.Text = "Проверить тест";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // groupBox2
             // 
@@ -388,6 +388,7 @@
             this.button10.TabIndex = 54;
             this.button10.Text = "Редактор сценариев";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // checkBox1
             // 
@@ -408,6 +409,7 @@
             this.button8.TabIndex = 52;
             this.button8.Text = "Редактор тестов";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button5
             // 
@@ -417,6 +419,7 @@
             this.button5.TabIndex = 51;
             this.button5.Text = "Удалить";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 
@@ -433,6 +436,7 @@
             this.button4.TabIndex = 49;
             this.button4.Text = "...";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox2
             // 
@@ -452,6 +456,7 @@
             this.button3.TabIndex = 47;
             this.button3.Text = "Начать тестирование";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -461,6 +466,7 @@
             this.button2.TabIndex = 46;
             this.button2.Text = "Добавить тест";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox4
             // 

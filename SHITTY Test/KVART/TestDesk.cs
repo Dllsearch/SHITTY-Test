@@ -39,17 +39,16 @@ namespace SHITTYTEST
             return tt;
         }
 
-        void updateForm()
+        void updTestList()
         {
             listBox1.Items.Clear();
             Tests = dbworker.getTests();
             Tests.OrderBy(x => x.Name);
-            permVis();
-
-            /// TODO - GO F*CK YOUR BRAIN YOURSELF !!! 
-            ///     brain
-
             listBox1.Items.AddRange(Tests.Select(x => x.Name).ToArray());
+        }
+
+        void updResultsTable()
+        {
             //listView1.Items.Add()
             resultsmx = dbworker.getResultsString();
             dataGridView1.RowCount = resultsmx.Length;
@@ -74,7 +73,14 @@ namespace SHITTYTEST
             //listBox1.Items.AddRange(animal.Select(x => x.name).ToArray());
         }
 
-        void permVis ()
+        void updateForm()
+        {
+            permVis();
+            updTestList();
+            updResultsTable();
+        }
+
+        void permVis()
         {
             if (User.Permissions == user.permtype.studen || User.Permissions == user.permtype.cheater)
             {
@@ -82,10 +88,16 @@ namespace SHITTYTEST
                 button4.Hide();
                 button5.Hide();
                 button8.Hide();
+                button10.Hide();
                 textBox1.Hide();
                 textBox2.Hide();
                 label1.Hide();
                 label3.Hide();
+                checkBox1.Hide();
+                textBox4.Text = User.Group;
+                textBox4.Enabled = false;
+                textBox5.Text = User.Name;
+                textBox5.Enabled = false;
             }
         }
 
@@ -118,22 +130,23 @@ namespace SHITTYTEST
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != null && textBox1.Text != "" && link != null && link != "")
+            Close();
+        }
+        
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if ((textBox3.Text != "") && (textBox3.Text != null))
             {
-                dbworker.newTest(textBox1.Text, User.Username, link);
-               
+                listBox1.Items.Clear();
+                Tests = dbworker.findTests(textBox3.Text);
+                Tests.OrderBy(x => x.Name);
+                listBox1.Items.AddRange(Tests.Select(x => x.Name).ToArray());
             }
-            else MessageBox.Show("Введите ВСЕ данные корректно!");
-            updateForm();
+            else updTestList();
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            mansNoHot();
-        }
-
+        
         private void button5_Click(object sender, EventArgs e)
         {
             string s = listBox1.GetItemText(listBox1.SelectedItem);
@@ -163,28 +176,9 @@ namespace SHITTYTEST
             else MessageBox.Show("Выберите существующий тест из списка!");
         }
         
-        private void button9_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-            resultsmx = dbworker.getResultsString();
-            int row = 0;
-            for (int x = 0; x < resultsmx.Length; x++)
-            {
-                if ((resultsmx[x][0].IndexOf(textBox5.Text, StringComparison.OrdinalIgnoreCase) != -1) && (resultsmx[x][1].IndexOf(textBox4.Text, StringComparison.OrdinalIgnoreCase) != -1) && (resultsmx[x][2].IndexOf(textBox7.Text, StringComparison.OrdinalIgnoreCase) != -1) && (resultsmx[x][4].IndexOf(textBox6.Text, StringComparison.OrdinalIgnoreCase) != -1))
-                {
-                    dataGridView1.Rows.Add();
-                    for (int col = 0; col < dataGridView1.ColumnCount; col++)
-                    {
-                        dataGridView1[col, row].Value = resultsmx[x][col].ToString();
-                    }
-                    row++;
-                }
-            }
+            mansNoHot();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -194,14 +188,76 @@ namespace SHITTYTEST
             form.ShowDialog();
             Show();
         }
-
-        private void button6_Click(object sender, EventArgs e)
+        
+        private void button2_Click(object sender, EventArgs e)
         {
-            /*
-            listBox1.Items.Clear(); p => p.Genres.Any(x => listOfGenres.Contains(x)
- 
-             listBox1.Items.AddRange(Tests.Where(x => Name.Contains(textBox3.Text).ToArray());
-             */
+            if (textBox1.Text != null && textBox1.Text != "" && link != null && link != "")
+            {
+                dbworker.newTest(textBox1.Text, User.Username, link);
+
+            }
+            else MessageBox.Show("Введите ВСЕ данные корректно!");
+            updateForm();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            resultsmx = dbworker.getResultsString();
+            int row = 0;
+            for (int x = 0; x < resultsmx.Length; x++)
+            {
+                if (
+                    (resultsmx[x][0].IndexOf(textBox5.Text, StringComparison.OrdinalIgnoreCase) != -1)
+                    && (resultsmx[x][1].IndexOf(textBox4.Text, StringComparison.OrdinalIgnoreCase) != -1)
+                    && (resultsmx[x][2].IndexOf(textBox7.Text, StringComparison.OrdinalIgnoreCase) != -1)
+                    && (resultsmx[x][4].IndexOf(textBox6.Text, StringComparison.OrdinalIgnoreCase) != -1)
+                    )
+                {
+                    dataGridView1.Rows.Add();
+                    for (int col = 0; col < dataGridView1.ColumnCount; col++)
+                    {
+                        if ((col != 3) && radioButton1.Checked)
+                        {
+                            dataGridView1[col, row].Value = resultsmx[x][col].ToString();
+                        }
+                        else if ((col == 3) && radioButton2.Checked)
+                        {
+                            bool np = false;
+                            int eballs = 0;
+                            shitcomp tst = tts(resultsmx[x][2]);
+                            if (tst == null)
+                            {
+                                np = true;
+                                goto L1;
+                            }
+                            for (int n = 0; n < tst.questions.Length; n++)
+                            {
+                                eballs += tst.questionsPoints[n];
+                            }
+                            double otn = Convert.ToDouble(resultsmx[x][col].ToString()) / eballs * 100;
+                            dataGridView1[col, row].Value = (otn / 20).ToString();
+                        L1:
+                            if (np)
+                            {
+                                dataGridView1[col, row].Value = "ТЕСТ НЕ НАЙДЕН";
+                            }
+                        }
+                    }
+                    row++;
+                }
+            }
+        }
+
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
         }
         /*
 private void listView1_ItemActivate(object sender, EventArgs e)

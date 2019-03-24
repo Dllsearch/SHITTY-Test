@@ -139,11 +139,12 @@ namespace SHITTYTEST
                 // Индексируем документ по определенному свойству
                 tests.EnsureIndex(x => x.Name);
                 var vtest = tests.Find(x => x.Name.Equals(name));
-                Test test = new Test();
+                Test test = null;
                 foreach (Test ftest in vtest)
                 {
                     test = ftest;
                 }
+                if (test == null) return null;
                 var stream = db.FileStorage.OpenRead(test.fileName);
                 shitcomp sc;
                 using (Stream input = stream)
@@ -175,6 +176,25 @@ namespace SHITTYTEST
             }
         }
 
+        public List<Test> findTests(string qnme)
+        {
+            // открывает базу данных, если ее нет - то создает
+            using (var db = new LiteDatabase(@"main.db"))
+            {
+                // Получаем коллекцию
+                var tests = db.GetCollection<Test>("Tests");
+
+                // Индексируем документ по определенному свойству
+                tests.EnsureIndex(x => x.Name);
+                var vtest = tests.Find(x => x.Name.Contains(qnme));
+                List<Test> Tests = new List<Test>();
+                foreach (Test ftest in vtest)
+                {
+                    Tests.Add(ftest);
+                }
+                return Tests;
+            }
+        }
 
         public void delTest(string what)
         {
