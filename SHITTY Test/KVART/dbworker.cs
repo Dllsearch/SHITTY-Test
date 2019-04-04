@@ -13,7 +13,7 @@ namespace SHITTYTEST
      * Методы записи тетов, загрузки файлов, получения тестов
      * Редактирования записей, работа с пользователями
     */
-    class dbworker
+    class DBworker
     {
         public void addResult(user user, int bs, string tstnm)
         {
@@ -176,6 +176,12 @@ namespace SHITTYTEST
             }
         }
 
+        public bool indexofbool(string source, string value, StringComparison comparisonType)
+        {
+            if (source.IndexOf(value, comparisonType) != -1) return true;
+            else return false;
+        }
+
         public List<Test> findTests(string qnme)
         {
             // открывает базу данных, если ее нет - то создает
@@ -186,7 +192,7 @@ namespace SHITTYTEST
 
                 // Индексируем документ по определенному свойству
                 tests.EnsureIndex(x => x.Name);
-                var vtest = tests.Find(x => x.Name.Contains(qnme));
+                var vtest = tests.Find(x => indexofbool(x.Name, qnme, StringComparison.OrdinalIgnoreCase));
                 List<Test> Tests = new List<Test>();
                 foreach (Test ftest in vtest)
                 {

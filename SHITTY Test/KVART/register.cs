@@ -18,14 +18,14 @@ namespace SHITTYTEST
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dbworker dbworker = new dbworker();
+            DBworker DBworker = new DBworker();
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || maskedTextBox2.Text == "" || maskedTextBox1.Text == "")
             {
                 MessageBox.Show("ВСЕ ПОЛЯ ОБЯЗАТЕЛЬНЫ К ЗАПОЛЕНИЮ");
             }
             else
             {
-                dbworker.newUser(textBox2.Text, textBox1.Text, maskedTextBox1.Text, textBox3.Text, maskedTextBox2.Text);
+                DBworker.newUser(textBox2.Text, textBox1.Text, maskedTextBox1.Text, textBox3.Text, maskedTextBox2.Text);
                 MessageBox.Show("Регистрация успешна!");
                 Close();
             }

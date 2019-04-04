@@ -18,8 +18,8 @@ namespace SHITTYTEST
         
         private void button1_Click(object sender, EventArgs e)
         {
-            dbworker dbworker = new dbworker();
-            user user = dbworker.login(textBox1.Text, textBox2.Text);
+            DBworker DBworker = new DBworker();
+            user user = DBworker.login(textBox1.Text, textBox2.Text);
             if (user != null)
             {
                 MessageBox.Show("ПРАВА: " + user.Permissions);
@@ -69,6 +69,14 @@ namespace SHITTYTEST
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            offline offline = new offline();
+            Hide();
+            offline.ShowDialog();
             this.Close();
         }
     }

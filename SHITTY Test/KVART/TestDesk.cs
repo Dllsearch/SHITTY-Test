@@ -14,7 +14,7 @@ namespace SHITTYTEST
 {
     public partial class TestDesk : Form
     {
-        dbworker dbworker = new dbworker();
+        DBworker DBworker = new DBworker();
         string[][] resultsmx;
         List<Test> Tests = new List<Test>();
         List<results> results = new List<results>();
@@ -32,8 +32,8 @@ namespace SHITTYTEST
         private shitcomp tts(string s)
         {
 
-            //Test sh = dbworker.getTest(s);
-            shitcomp tt = dbworker.getTest(s);
+            //Test sh = DBworker.getTest(s);
+            shitcomp tt = DBworker.getTest(s);
             //shitcomp tt = new shitcomp { Name = sh.Name, User = sh.User, isInitialised = sh.isInitialised, questions = sh.questions, questionsAmount = sh.questionsAmount, questionsPoints = sh.questionsPoints };
 
             return tt;
@@ -42,7 +42,7 @@ namespace SHITTYTEST
         void updTestList()
         {
             listBox1.Items.Clear();
-            Tests = dbworker.getTests();
+            Tests = DBworker.getTests();
             Tests.OrderBy(x => x.Name);
             listBox1.Items.AddRange(Tests.Select(x => x.Name).ToArray());
         }
@@ -50,7 +50,7 @@ namespace SHITTYTEST
         void updResultsTable()
         {
             //listView1.Items.Add()
-            resultsmx = dbworker.getResultsString();
+            resultsmx = DBworker.getResultsString();
             dataGridView1.RowCount = resultsmx.Length;
             //listView1.Items.Clear();
             //ListViewItem[] item = new ListViewItem[resultsmx.Length];
@@ -140,7 +140,7 @@ namespace SHITTYTEST
             if ((textBox3.Text != "") && (textBox3.Text != null))
             {
                 listBox1.Items.Clear();
-                Tests = dbworker.findTests(textBox3.Text);
+                Tests = DBworker.findTests(textBox3.Text);
                 Tests.OrderBy(x => x.Name);
                 listBox1.Items.AddRange(Tests.Select(x => x.Name).ToArray());
             }
@@ -152,7 +152,7 @@ namespace SHITTYTEST
             string s = listBox1.GetItemText(listBox1.SelectedItem);
             if (s != null && s != "")
             {
-                dbworker.delTest(s);
+                DBworker.delTest(s);
                 updateForm();
             }
             else
@@ -167,7 +167,7 @@ namespace SHITTYTEST
             if (s != null && s != "")
             {
                 shitcomp tst = tts(s);
-                string tstn = dbworker.checkTest(s).Name;
+                string tstn = DBworker.checkTest(s).Name;
                 testerv3 form = new testerv3(tst, User, tstn);
                 Hide();
                 form.ShowDialog();
@@ -193,7 +193,7 @@ namespace SHITTYTEST
         {
             if (textBox1.Text != null && textBox1.Text != "" && link != null && link != "")
             {
-                dbworker.newTest(textBox1.Text, User.Username, link);
+                DBworker.newTest(textBox1.Text, User.Username, link);
 
             }
             else MessageBox.Show("Введите ВСЕ данные корректно!");
@@ -203,7 +203,7 @@ namespace SHITTYTEST
         private void button7_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            resultsmx = dbworker.getResultsString();
+            resultsmx = DBworker.getResultsString();
             int row = 0;
             for (int x = 0; x < resultsmx.Length; x++)
             {
@@ -217,32 +217,7 @@ namespace SHITTYTEST
                     dataGridView1.Rows.Add();
                     for (int col = 0; col < dataGridView1.ColumnCount; col++)
                     {
-                        if ((col != 3) && radioButton1.Checked)
-                        {
                             dataGridView1[col, row].Value = resultsmx[x][col].ToString();
-                        }
-                        else if ((col == 3) && radioButton2.Checked)
-                        {
-                            bool np = false;
-                            int eballs = 0;
-                            shitcomp tst = tts(resultsmx[x][2]);
-                            if (tst == null)
-                            {
-                                np = true;
-                                goto L1;
-                            }
-                            for (int n = 0; n < tst.questions.Length; n++)
-                            {
-                                eballs += tst.questionsPoints[n];
-                            }
-                            double otn = Convert.ToDouble(resultsmx[x][col].ToString()) / eballs * 100;
-                            dataGridView1[col, row].Value = (otn / 20).ToString();
-                        L1:
-                            if (np)
-                            {
-                                dataGridView1[col, row].Value = "ТЕСТ НЕ НАЙДЕН";
-                            }
-                        }
                     }
                     row++;
                 }
@@ -256,6 +231,31 @@ namespace SHITTYTEST
         }
 
         private void button11_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "";
+            updTestList();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            updResultsTable();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void groupBox8_Enter(object sender, EventArgs e)
         {
 
         }

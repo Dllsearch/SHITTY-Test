@@ -59,7 +59,7 @@ namespace SHITTYTEST
         bool[][] checks;
         string[] txt;
 
-        string link;
+        //string link;
 
         void preInit(shitcomp questionarium)
         {
@@ -195,8 +195,8 @@ namespace SHITTYTEST
             MessageBox.Show("Вы набрали " + balls + " из " + eballs 
                 //+ "\n Неточных ответов - " + mballs
                 , "Итог");
-            dbworker dbworker = new dbworker();
-            dbworker.addResult(User, balls, testName);
+            DBworker DBworker = new DBworker();
+            DBworker.addResult(User, balls, testName);
         }
 
         void updateForm()

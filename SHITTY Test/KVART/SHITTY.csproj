@@ -119,12 +119,6 @@
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
     <Compile Include="shitcomp.cs" />
-    <Compile Include="Launcher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Launcher.Designer.cs">
-      <DependentUpon>Launcher.cs</DependentUpon>
-    </Compile>
     <Compile Include="testerv1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,9 +168,6 @@
     <Compile Include="user.cs" />
     <EmbeddedResource Include="F1BKP.resx">
       <DependentUpon>F1BKP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Launcher.resx">
-      <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testerv1.resx">
       <DependentUpon>testerv1.cs</DependentUpon>
