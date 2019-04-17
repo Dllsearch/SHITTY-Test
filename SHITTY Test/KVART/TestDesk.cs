@@ -29,7 +29,7 @@ namespace SHITTYTEST
             updateForm();
         }
 
-        private shitcomp tts(string s)
+        private shitcomp tts(string s) //получаем тестики
         {
 
             //Test sh = DBworker.getTest(s);
@@ -39,7 +39,7 @@ namespace SHITTYTEST
             return tt;
         }
 
-        void updTestList()
+        void updTestList() // (ВНЕЗАПНО) Обновляет список тестов
         {
             listBox1.Items.Clear();
             Tests = DBworker.getTests();
@@ -47,7 +47,7 @@ namespace SHITTYTEST
             listBox1.Items.AddRange(Tests.Select(x => x.Name).ToArray());
         }
 
-        void updResultsTable()
+        void updResultsTable() // Получаем результатики
         {
             //listView1.Items.Add()
             resultsmx = DBworker.getResultsString();
@@ -73,14 +73,14 @@ namespace SHITTYTEST
             //listBox1.Items.AddRange(animal.Select(x => x.name).ToArray());
         }
 
-        void updateForm()
+        void updateForm() //Обновляет окошки окошка
         {
             permVis();
             updTestList();
             updResultsTable();
         }
 
-        void permVis()
+        void permVis() // Не показывает кнопки студентикам
         {
             if (User.Permissions == user.permtype.studen || User.Permissions == user.permtype.cheater)
             {
@@ -99,9 +99,10 @@ namespace SHITTYTEST
                 textBox5.Text = User.Name;
                 textBox5.Enabled = false;
             }
+            if (User.Permissions == user.permtype.teacher) button13.Enabled = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // ОБНОВИТЬ
         {
             updateForm();
         }
@@ -135,7 +136,7 @@ namespace SHITTYTEST
             Close();
         }
         
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) // Поиск тестов
         {
             if ((textBox3.Text != "") && (textBox3.Text != null))
             {
@@ -147,7 +148,7 @@ namespace SHITTYTEST
             else updTestList();
         }
         
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) //УДОЛЯИТ тест
         {
             string s = listBox1.GetItemText(listBox1.SelectedItem);
             if (s != null && s != "")
@@ -161,7 +162,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // Тест
         {
             string s = listBox1.GetItemText(listBox1.SelectedItem);
             if (s != null && s != "")
@@ -176,12 +177,12 @@ namespace SHITTYTEST
             else MessageBox.Show("Выберите существующий тест из списка!");
         }
         
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // Выбор теста
         {
             mansNoHot();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e) //Редактор
         {
             Editor form = new Editor();
             this.Hide();
@@ -189,7 +190,7 @@ namespace SHITTYTEST
             Show();
         }
         
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // добавить тест
         {
             if (textBox1.Text != null && textBox1.Text != "" && link != null && link != "")
             {
@@ -200,7 +201,7 @@ namespace SHITTYTEST
             updateForm();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e) // Поиск результатов
         {
             dataGridView1.Rows.Clear();
             resultsmx = DBworker.getResultsString();
@@ -217,10 +218,11 @@ namespace SHITTYTEST
                     dataGridView1.Rows.Add();
                     for (int col = 0; col < dataGridView1.ColumnCount; col++)
                     {
-                            dataGridView1[col, row].Value = resultsmx[x][col].ToString();
+                        dataGridView1[col, row].Value = resultsmx[x][col].ToString();
                     }
                     row++;
                 }
+                else MessageBox.Show("СОВПАДЕНИЙ НЕ НАЙДЕНО");
             }
         }
 
@@ -230,13 +232,13 @@ namespace SHITTYTEST
 
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e) // Сброс поиска тестов
         {
             textBox3.Text = "";
             updTestList();
         }
-
-        private void button12_Click(object sender, EventArgs e)
+        
+        private void button12_Click(object sender, EventArgs e) // Сброс поиска результатов
         {
             textBox4.Text = "";
             textBox5.Text = "";
@@ -247,26 +249,33 @@ namespace SHITTYTEST
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("http://www.github.com/Dllsearch/SHITTY-Test");
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("http://ntaddv.space");
         }
 
         private void groupBox8_Enter(object sender, EventArgs e)
         {
 
         }
-        /*
-private void listView1_ItemActivate(object sender, EventArgs e)
-{
-int i = listView1.SelectedIndices[0];
-string s = listView1.Items[i].Text;
-listBox2.Items.Clear();
-listBox2.Items.AddRange(resultsmx[i]);
-}
-*/
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            UserEditor UE = new UserEditor();
+            UE.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            CurrentUserEdit ue = new CurrentUserEdit(User, false);
+            Hide();
+            ue.ShowDialog();
+            Close();
+        }
     }
 }

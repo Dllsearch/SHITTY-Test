@@ -9,13 +9,13 @@ namespace SHITTYTEST
 {
 
     [Serializable]
-    public class results
+    public class results // Класс результатов
     {
         [BsonId]
         public Guid Id { get; set; }
-        public user User { get; set; }
-        public int balls { get; set; }
-        public DateTime DateTime { get; set; }
-        public string testName { get; set; }
+        public user User { get; set; } // Пользователь
+        public int balls { get; set; } // Набранные очки
+        public DateTime DateTime { get; set; } // Дата/время прохождения теста
+        public string testName { get; set; } // Назввание теста
     }
 }

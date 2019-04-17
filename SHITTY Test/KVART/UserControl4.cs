@@ -14,7 +14,7 @@ namespace SHITTYTEST
     {
 
         RadioButton[] radioButtons;
-        PictureBox[] pictureBoxes;
+        PictureBox[] pictureBoxes; // Картиночки
 
         public UserControl4()
         {
@@ -25,7 +25,7 @@ namespace SHITTYTEST
             pictureBoxes = pcs;
         }
 
-        public void loadQuestion(question question)
+        public void loadQuestion(question question) // старый + картинки
         {
             label1.Text = question.questiontext;
             if (question.questionpic != null) pictureBox1.Image = question.questionpic;

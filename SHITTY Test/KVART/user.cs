@@ -7,32 +7,18 @@ using LiteDB;
 
 namespace SHITTYTEST
 {
-
-    /*
-    public class Company
-    {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public List<User> Users { get; set; }
-    }
-    public class User
-    {
-        public string Name { get; set; }
-        public string Position { get; set; }
-    }
-    */
     [Serializable]
     public class user
     {
         [BsonId] 
         public Guid Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Name { get; set; }
-        public string Group { get; set; }
-        public string PermaKey { get; set; }
-        public permtype Permissions { get; set; }
-        public enum permtype
+        public string Username { get; set; } //Ник
+        public string Password { get; set; } //Парол
+        public string Name { get; set; } //Имя
+        public string Group { get; set; } //Группа
+        public string PermaKey { get; set; } //Рудимент
+        public permtype Permissions { get; set; } // Права юзера
+        public enum permtype //список прав
         {
             admin,
             teacher,
@@ -40,7 +26,7 @@ namespace SHITTYTEST
             cheater,
             CAHR
         }
-        public override string ToString()
+        public override string ToString() //возвращает юзерку строкой (нахрена?)
         {
             return string.Format("Id:{0},Username:{1},Password:{2},Name:{3},PermaKey:{4},Permissions:{5}",
                 Id,

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SHITTYTEST
 {
     [Serializable]
-    public class question
+    public class question // вопросики (тест)
     {
         public bool initialised { get; set; }
         public bool pics { get; set; }

@@ -24,7 +24,7 @@ namespace SHITTYTEST
             InitializeComponent();
         }
 
-        private int mansNoHot()
+        private int mansNoHot() // Выбор теста
         {
             OpenFileDialog bucket = new OpenFileDialog();
             //bucket.InitialDirectory = @"C:\";
@@ -47,7 +47,7 @@ namespace SHITTYTEST
             mansNoHot();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // Открываем тест
         {
             string[] patharr; //для разбивки пути на куски
             string[] tnarr; //отделить имя и расширение
@@ -67,7 +67,7 @@ namespace SHITTYTEST
             }
             else if ((tnarr.Last() == "dat") || (tnarr.Last() == "shittytestv3"))
             {
-                Form4 form = new Form4(test);
+                testerv3offline form = new testerv3offline(test);
                 this.Hide();
                 form.ShowDialog();
             }
@@ -79,7 +79,7 @@ namespace SHITTYTEST
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // Редактор тестов
         {
             Editor form = new Editor();
             this.Hide();

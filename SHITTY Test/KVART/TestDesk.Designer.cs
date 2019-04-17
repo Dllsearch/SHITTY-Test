@@ -67,10 +67,12 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button14 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -480,6 +482,8 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.button14);
+            this.groupBox7.Controls.Add(this.button13);
             this.groupBox7.Controls.Add(this.linkLabel2);
             this.groupBox7.Controls.Add(this.linkLabel1);
             this.groupBox7.Controls.Add(this.label7);
@@ -491,6 +495,16 @@
             this.groupBox7.Size = new System.Drawing.Size(807, 30);
             this.groupBox7.TabIndex = 52;
             this.groupBox7.TabStop = false;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(473, 7);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(76, 23);
+            this.button13.TabIndex = 45;
+            this.button13.Text = "UserEditor";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // linkLabel2
             // 
@@ -522,9 +536,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 13);
+            this.label7.Size = new System.Drawing.Size(144, 13);
             this.label7.TabIndex = 42;
-            this.label7.Text = "SHITTY-TEST BETA v3.9";
+            this.label7.Text = "SHITTY-TEST BETA v3.10b";
             // 
             // groupBox8
             // 
@@ -537,6 +551,16 @@
             this.groupBox8.TabIndex = 53;
             this.groupBox8.TabStop = false;
             this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(392, 7);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 46;
+            this.button14.Text = "Настройки";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // TestDesk
             // 
@@ -607,5 +631,7 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
     }
 }

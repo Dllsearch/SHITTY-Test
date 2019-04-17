@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SHITTYTEST
 {
-    class clist
+    class clist //ДАЖЕ. НЕ. СПРАШИВАЙТЕ.
     {
         
     }

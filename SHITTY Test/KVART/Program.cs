@@ -11,12 +11,12 @@ namespace SHITTYTEST
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
-        [STAThread]
+        [STAThread] // Включаем многопоточность
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Login()); // Форма логина, я вызываю тебя!!!
 
         }
     }

@@ -17,13 +17,13 @@ namespace SHITTYTEST
             InitializeComponent();
         }
 
-        public void loadQuestion(question question)
+        public void loadQuestion(question question) // Выводит текст вопроса, и изображение при наличии
         {
             label1.Text = question.questiontext;
             if (question.questionpic != null) label1.Image = question.questionpic;
         }
 
-        public string whatIsAsk(question question)
+        public string whatIsAsk(question question) // Атвет
         {
             return textBox1.Text;
         }

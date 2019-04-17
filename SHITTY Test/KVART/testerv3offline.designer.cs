@@ -1,6 +1,6 @@
 ﻿namespace SHITTYTEST
 {
-    partial class Form4
+    partial class testerv3offline
     {
         /// <summary>
         /// Required designer variable.
@@ -187,7 +187,7 @@
             this.userControl11.Size = new System.Drawing.Size(900, 615);
             this.userControl11.TabIndex = 3;
             // 
-            // Form4
+            // testerv3offline
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,7 +203,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(401, 222);
-            this.Name = "Form4";
+            this.Name = "testerv3offline";
             this.Text = "--------";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

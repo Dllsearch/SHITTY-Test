@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace SHITTYTEST
 {
     [Serializable]
-    public class shitcomp
+    public class shitcomp //Заголовок теста (содержит класс с вопросиками)
     {
         [BsonId]
         public Guid Id { get; set; }

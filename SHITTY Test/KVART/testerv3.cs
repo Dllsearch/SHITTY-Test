@@ -26,26 +26,25 @@ namespace SHITTYTEST
 
         // -------------------
 
-        [DllImport("user32", CharSet = CharSet.Auto)]
+        [DllImport("user32", CharSet = CharSet.Auto)] // А ТУТ ЖООООПАААА!!!
         internal extern static bool PostMessage(IntPtr hWnd, uint Msg, uint WParam, uint LParam);
 
-        [DllImport("user32", CharSet = CharSet.Auto)]
+        [DllImport("user32", CharSet = CharSet.Auto)] // Другая жопа
         internal extern static bool ReleaseCapture();
 
-        const uint WM_SYSCOMMAND = 0x0112;
-        const uint DOMOVE = 0xF012;
-        const uint DOSIZE = 0xF008;
-
+        const uint WM_SYSCOMMAND = 0x0112; // РАМКА ОКНА
+        const uint DOMOVE = 0xF012; // ПЕРЕТАСКИВАЛКА
+        const uint DOSIZE = 0xF008; // ТАСКАЛКА
         // --------------------
         
         protected override CreateParams CreateParams
         {
             get
             {
-                const int WS_SIZEBOX = 0x40000;
+                const int WS_SIZEBOX = 0x40000; // Задаем малюююсенькую рамку
 
                 var cp = base.CreateParams;
-                cp.Style |= WS_SIZEBOX;
+                cp.Style |= WS_SIZEBOX; // Стиль рамки
 
                 return cp;
             }
@@ -61,7 +60,7 @@ namespace SHITTYTEST
 
         //string link;
 
-        void preInit(shitcomp questionarium)
+        void preInit(shitcomp questionarium) // Загрузка теста
         {
             questions = questionarium;
             questions.questions = questionarium.questions.OrderBy(x => rand.Next()).ToArray();
@@ -78,7 +77,7 @@ namespace SHITTYTEST
             updateForm();
         }
 
-        void questionUpdater()
+        void questionUpdater() // обновляет (переключает) вопрос
         {
             userControl11.Hide();
             userControl21.Hide();
@@ -102,7 +101,7 @@ namespace SHITTYTEST
             questionLoader(questions.questions[counter].qtype);
         }
 
-        void takeAnswers ()
+        void takeAnswers () // Епифанцев пишет ответы
         {
             if (questions.questions[counter].qtype == question.questiontypes.radio)
             {
@@ -118,7 +117,7 @@ namespace SHITTYTEST
             }
         }
 
-        void questionLoader (question.questiontypes qtype)
+        void questionLoader (question.questiontypes qtype) // Епифанцев записывает вопросы
         {
             if (qtype == question.questiontypes.radio)
             {
@@ -136,7 +135,7 @@ namespace SHITTYTEST
             }
         }
 
-        void points ()
+        void points () // ЩИТАЕМ БАЛЛЫ С КОЗЛЁНКОМ!!!
         {
             int balls = 0;
             int eballs = 0;
@@ -199,7 +198,7 @@ namespace SHITTYTEST
             DBworker.addResult(User, balls, testName);
         }
 
-        void updateForm()
+        void updateForm() // обновитт форму
         {
             if (counter < questions.questions.Length)
             {
@@ -219,7 +218,7 @@ namespace SHITTYTEST
             }
         }
 
-        public testerv3(shitcomp shitcomp, user user, string tstName)
+        public testerv3(shitcomp shitcomp, user user, string tstName) // ИНИЦИАЛИЗАЦИЯ ПРИ СОЗДАНИИ
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -234,14 +233,14 @@ namespace SHITTYTEST
             Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //прддщ
         {
             counter--;
             updateForm();
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // следующий вопрос
         {
             if (counter<questions.questions.Length)
             {
@@ -251,7 +250,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void panel1_MouseDown(object sender, MouseEventArgs e) //ТОСКАИТ ОКНО ЕСЛИ СХВОТИТТ ПОНЕЛКУ
         {
             ReleaseCapture();
             PostMessage(this.Handle, WM_SYSCOMMAND, DOMOVE, 0);

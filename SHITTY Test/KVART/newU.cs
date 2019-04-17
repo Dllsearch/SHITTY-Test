@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace SHITTYTEST
 {
-    public partial class register : Form
+    public partial class newU : Form
     {
-        public register()
+        public newU()
         {
             InitializeComponent();
         }
@@ -19,17 +19,16 @@ namespace SHITTYTEST
         private void button2_Click(object sender, EventArgs e)
         {
             DBworker DBworker = new DBworker();
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || maskedTextBox1.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || comboBox1.Text == "" || maskedTextBox1.Text == "")
             {
-                MessageBox.Show("ВСЕ ПОЛЯ кроме PermKey ОБЯЗАТЕЛЬНЫ К ЗАПОЛЕНИЮ");
+                MessageBox.Show("ВСЕ ПОЛЯ ОБЯЗАТЕЛЬНЫ К ЗАПОЛЕНИЮ");
             }
             else
             {
-                DBworker.newUser(textBox2.Text, textBox1.Text, maskedTextBox1.Text, textBox3.Text, maskedTextBox2.Text);
+                DBworker.addUser(textBox2.Text, textBox1.Text, maskedTextBox1.Text, textBox3.Text, (user.permtype) comboBox1.SelectedIndex);
                 MessageBox.Show("Регистрация успешна!");
                 Close();
             }
-
         }
     }
 }

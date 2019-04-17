@@ -26,7 +26,7 @@ namespace SHITTYTEST
 
         shitcomp compared = new shitcomp();
 
-        void initNEO()
+        void initNEO() // Просто забивает элементы формы в массив, ибо так удобнее
         {
             RadioButton[] radioButtonss =
                 {
@@ -35,7 +35,8 @@ namespace SHITTYTEST
                 radioButton6,
                 radioButton7,
                 radioButton8,
-                radioButton9,                radioButton10,
+                radioButton9,
+                radioButton10,
                 radioButton11
             };
             radioButtons = radioButtonss;
@@ -89,7 +90,7 @@ namespace SHITTYTEST
             answersWhatIsImageButtons = img2Btnss;
         }
 
-        void initEditor(int dudes)
+        void initEditor(int dudes) // ТИп инициализирует
         {
             compared.afterInit(dudes);
             for (int wat=0;wat < dudes; wat++)
@@ -105,7 +106,7 @@ namespace SHITTYTEST
             if (true) updateForm();
         }
 
-        void updateForm()
+        void updateForm()// Обновляет форму исходя из стадии вопроса
         {
             toolStripStatusLabel1.Text = "ВОПРОС №" + (1 + compared.tamedCounter) + ", ЭТАП " + qstep[compared.tamedCounter];
             hideAll();
@@ -130,7 +131,7 @@ namespace SHITTYTEST
             }
         }
 
-        void hideAll()
+        void hideAll() // Забыть всё
         {
             for (int op = 0; op < 8; op++)
             {
@@ -293,7 +294,7 @@ namespace SHITTYTEST
             groupBox5.Show();
         }
 
-        public Editor()
+        public Editor() // Инициализация (да ладна)
         {
             InitializeComponent();
             initNEO();
@@ -313,7 +314,7 @@ namespace SHITTYTEST
             updateForm();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) //Конвертит старый говноформат
         {
             MessageBox.Show("В РАЗРАБООТКЕ");
             //
@@ -411,7 +412,7 @@ namespace SHITTYTEST
                         }
                     }
                 }
-                else if (tnarr.Last() == "shittytestv2man")
+                else if (tnarr.Last() == "shittytestv2man") //а это вообще...
                 {
                     int ansttl = Convert.ToInt32(file.ReadLine());
                     string[] trueanswersstring = new string[ansttl];
@@ -476,12 +477,12 @@ namespace SHITTYTEST
             updateForm();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e) //Удолить рука не поднимается
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // Тип вопроса
         {
             if (radioButton1.Checked) compared.questions[compared.tamedCounter].qtype = question.questiontypes.radio;
             if (radioButton2.Checked) compared.questions[compared.tamedCounter].qtype = question.questiontypes.check;
@@ -490,19 +491,19 @@ namespace SHITTYTEST
             updateForm();
         }
 
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e) //Не помню этого
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)// ВОПРОС ЗНАТОКАМ
         {
             compared.questions[compared.tamedCounter].questiontext = textBox9.Text;
             qstep[compared.tamedCounter] = 4;
             updateForm();
         }
 
-        void answWrite ()
+        void answWrite () // Епифанцев записывает ответы...
         {
             for (int yay = 0; yay < compared.questions[compared.tamedCounter].answerstext.Length; yay++)
             {
@@ -531,12 +532,12 @@ namespace SHITTYTEST
             }
         }
 
-        private void button17_Click(object sender, EventArgs e)
+        private void button17_Click(object sender, EventArgs e) // Сказать братишке, чтоб записал
         {
             answWrite();
         }
 
-        void writeAndExit(string path)
+        void writeAndExit(string path) // Запиши тест в файл, и иди чисти вилкой г***о
         {
             FileStream MainFile = new FileStream(path, FileMode.Create, FileAccess.Write);
             StreamWriter file = new StreamWriter(MainFile, Encoding.GetEncoding(1251));
@@ -619,7 +620,7 @@ namespace SHITTYTEST
             Close();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e) // В1/2 Сейв
         {
             if (MessageBox.Show("При сохранении в чиатемом формате, медиа-контент не сохраняется! \n  Вы уверены в том, то хотите продолжить?", "ВНИМАНИЕ", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {
@@ -640,7 +641,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void button18_Click(object sender, EventArgs e)
+        private void button18_Click(object sender, EventArgs e) // Открыть тест
         {
             OpenFileDialog bucket = new OpenFileDialog();
             bucket.Filter = "Test files (*.shittytestv3)|*.shittytestv3|" + "class data (*.dat)|*.dat|" + "All Files (*.*)|*.*";
@@ -661,7 +662,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void button19_Click(object sender, EventArgs e)
+        private void button19_Click(object sender, EventArgs e) // Схоронить тест
         {
             SaveFileDialog save = new SaveFileDialog();
             save.Filter = "Test files (*.shittytestv3)|*.shittytestv3|" + "All Files (*.*)|*.*";
@@ -685,7 +686,7 @@ namespace SHITTYTEST
 
         }
 
-        private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        private void radioButton12_CheckedChanged(object sender, EventArgs e) // Если нужны картинки...
         {
             if ((radioButton12.Checked) || (compared.questions[compared.tamedCounter].qtype != question.questiontypes.text))
             {
@@ -698,7 +699,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void radioButton13_CheckedChanged(object sender, EventArgs e)
+        private void radioButton13_CheckedChanged(object sender, EventArgs e) // если картинки не нужны
         {
 
             if ((radioButton13.Checked) || (compared.questions[compared.tamedCounter].qtype == question.questiontypes.text))
@@ -712,7 +713,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void button20_Click(object sender, EventArgs e) //открываем картиночки :)
         {
             OpenFileDialog bucket = new OpenFileDialog();
             bucket.Filter = "ЕБУЧИЕ ШАКАЛЫ (*.jpg)|*.jpg|" + "ЕБУЧИЕ ШАКАЛЫ (*.jp*g)|*.jp*g|" + "BMP (*.bmp)|*.bmp|" + "GIF (*.gif)|*.gif|" + "All Files (*.*)|*.*";
@@ -727,7 +728,7 @@ namespace SHITTYTEST
             pictureBox1.Image = compared.questions[compared.tamedCounter].questionpic;
         }
 
-        void setQPic (int answerN)
+        void setQPic (int answerN) // тож картиночки
         {
 
             OpenFileDialog bucket = new OpenFileDialog();
@@ -742,6 +743,7 @@ namespace SHITTYTEST
             }
         }
 
+        // Задаем картиночки ответам
         private void button9_Click(object sender, EventArgs e)
         {
             setQPic(0);
@@ -782,7 +784,7 @@ namespace SHITTYTEST
             setQPic(7);
         }
 
-        void callPic (int answerN)
+        void callPic (int answerN) // Пасматрет картинку
         {
             PicView form = new PicView(compared.questions[compared.tamedCounter].answerspic[answerN]);
             form.Show();
@@ -827,7 +829,7 @@ namespace SHITTYTEST
         {
             callPic(7);
         }
-
+        // Без комментариев...
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

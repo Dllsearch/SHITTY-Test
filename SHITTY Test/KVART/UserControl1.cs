@@ -14,7 +14,7 @@ namespace SHITTYTEST
     {
 
         RadioButton[] radioButtons;
-
+   
         public UserControl1()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace SHITTYTEST
             radioButtons = radioButton;
         }
 
-        public void loadQuestion(question question)
+        public void loadQuestion(question question) // Текст вопроса, отображение ответов
         {
             label1.Text = question.questiontext;
             for(int n=0;n<8;n++)
@@ -37,7 +37,7 @@ namespace SHITTYTEST
             }
         }
 
-        public bool[] whatIsAsk (question question)
+        public bool[] whatIsAsk (question question) // Ответ
         {
             bool[] nah = new bool [question.trueanswer.Length];
             for (int n=0; n<nah.Length; n++)

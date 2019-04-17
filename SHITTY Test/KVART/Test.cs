@@ -8,7 +8,7 @@ using LiteDB;
 
 namespace SHITTYTEST
 {
-    public class Test
+    public class Test // Запись теста
     {
         [BsonId]
         public Guid Id { get; set; }

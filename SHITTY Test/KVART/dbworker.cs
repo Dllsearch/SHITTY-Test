@@ -10,26 +10,27 @@ using LiteDB;
 namespace SHITTYTEST
 {
     /*  Класс для работы с БД
-     * Методы записи тетов, загрузки файлов, получения тестов
+     * Методы записи тестов, загрузки файлов, получения тестов
      * Редактирования записей, работа с пользователями
     */
     class DBworker
     {
-        public void addResult(user user, int bs, string tstnm)
+        public void addResult(user user, int bs, string tstnm) //Добавляет результат
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
             {
                 // Получаем коллекцию
                 var results = db.GetCollection<results>("Results");
-                DateTime dateTime = DateTime.Now;
+                DateTime dateTime = DateTime.Now; // Время сейчас
+                // Создаёт обьект результата
                 var res = new results { User = user, balls = bs, DateTime = dateTime, testName = tstnm };
-                results.Insert(res);
+                results.Insert(res); // Запись обьекта в БД
                 //MessageBox.Show("Тест добавлен успешно!");
             }
         }
 
-        public List<results> getResults()
+        public List<results> getResults() // Возвращает результаты
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -39,9 +40,9 @@ namespace SHITTYTEST
 
                 // Индексируем документ по определенному свойству
                 Results.EnsureIndex(x => x.DateTime);
-                var vResults = Results.FindAll();
-                List<results> res = new List<results>();
-                foreach (results fResults in vResults)
+                var vResults = Results.FindAll(); // Ищем все результаты
+                List<results> res = new List<results>(); // Создаем лист с результатами
+                foreach (results fResults in vResults) // Каждый добавляем в лист
                 {
                     res.Add(fResults);
                 }
@@ -50,6 +51,7 @@ namespace SHITTYTEST
         }
 
         public string[][] getResultsString()
+        // Возвращает результаты с разделенной по столбцам информацией
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -61,18 +63,18 @@ namespace SHITTYTEST
                 Results.EnsureIndex(x => x.DateTime);
                 var vResults = Results.FindAll();
                 List<results> res = new List<results>();
-                int r = 0;
+                int r = 0; // Счетчик
                 foreach (results fResults in vResults)
                 {
                     res.Add(fResults);
                     r++;
                 }
-                string[][] msv = new string[r][];
+                string[][] msv = new string[r][]; // 2м масив, 1размер - счетчик
                 for (int x = 0; x < r; x++)
                 {
-                    msv[x] = new string[5];
+                    msv[x] = new string[5]; // Инициализируем 2й размер
                 }
-                for (int x = 0; x < r; x++)
+                for (int x = 0; x < r; x++) // забиваем массив результатами
                 {
                     msv[x][0] = res[x].User.Name;
                     msv[x][1] = res[x].User.Group;
@@ -84,7 +86,7 @@ namespace SHITTYTEST
             }
         }
 
-        public void newTest(string name, string user, string link)
+        public void newTest(string name, string user, string link) //Добавить тест
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -97,18 +99,23 @@ namespace SHITTYTEST
                 }
                 else
                 {
+                    //Получаем имя файла, транслителируем, убираем пробелы, использууем строчные
                     string cLink = Translit(link.Split('\\').Last().Split('.').Last().Trim(' ').ToLower());
+                    //Называем файл теста рандомным именем (чтоб хитрые студенты хоть немного подумали)
                     Random random = new Random();
+                    // Создаём обьект теста
                     var test = new Test { Name = name, User = user, fileName = random.Next().ToString() };
-                    //link = Translit(link.ToLower().Trim(' '));
-                    db.FileStorage.Upload(test.fileName, link);
+                    db.FileStorage.Upload(test.fileName, link); //загружаем файл в БД, с id в виде имени
                     tests.Insert(test);
                     MessageBox.Show("Тест добавлен успешно!");
                 }
             }
         }
 
-        public Test checkTest(string name)
+        // Если вы дочитали до этого места, и вас не стошнило, ил вы не упали в обмарок от такого говнокода,
+        // Хочу выразить вам моё уважение, а то меня самого от себя тошнит, когда читаю это.
+
+        public Test checkTest(string name) //Возвращает тест, отличие в NULL в инициализации
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -118,17 +125,18 @@ namespace SHITTYTEST
 
                 // Индексируем документ по определенному свойству
                 tests.EnsureIndex(x => x.Name);
+                //Ищем тест с совпадающим именем
                 var vtest = tests.Find(x => x.Name.Equals(name));
                 Test test = null;
                 foreach (Test ftest in vtest)
                 {
-                    test = ftest;
+                    test = ftest;   
                 }
                 return test;
             }
         }
 
-        public shitcomp getTest(string name)
+        public shitcomp getTest(string name) // Возвращает объект теста
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -138,25 +146,25 @@ namespace SHITTYTEST
 
                 // Индексируем документ по определенному свойству
                 tests.EnsureIndex(x => x.Name);
-                var vtest = tests.Find(x => x.Name.Equals(name));
+                var vtest = tests.Find(x => x.Name.Equals(name)); // Поиск по совпадению
                 Test test = null;
                 foreach (Test ftest in vtest)
                 {
                     test = ftest;
                 }
                 if (test == null) return null;
-                var stream = db.FileStorage.OpenRead(test.fileName);
-                shitcomp sc;
+                var stream = db.FileStorage.OpenRead(test.fileName); // Читаем с Файлопомойки БД
+                shitcomp sc; // Под объект
                 using (Stream input = stream)
                 {
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    sc = (shitcomp)formatter.Deserialize(input);
+                    BinaryFormatter formatter = new BinaryFormatter(); // Читаем обьект
+                    sc = (shitcomp)formatter.Deserialize(input); // Пишем объект
                 }
                 return sc;
             }
         }
 
-        public List <Test> getTests()
+        public List <Test> getTests() // Список тестов
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -178,11 +186,12 @@ namespace SHITTYTEST
 
         public bool indexofbool(string source, string value, StringComparison comparisonType)
         {
+            // просто проверка на существование заданной последовательности в строке
             if (source.IndexOf(value, comparisonType) != -1) return true;
             else return false;
         }
 
-        public List<Test> findTests(string qnme)
+        public List<Test> findTests(string qnme) // Возвращает тесты по запросу
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -202,7 +211,7 @@ namespace SHITTYTEST
             }
         }
 
-        public void delTest(string what)
+        public void delTest(string what) // УДОЛЯИТ тесты
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -223,7 +232,7 @@ namespace SHITTYTEST
             }
         }
 
-        private user.permtype pkdec (string permakey)
+        private user.permtype pkdec (string permakey) // говнокод для прав
         {
             user.permtype acc = user.permtype.studen;
             if (permakey == "students") acc = user.permtype.studen;
@@ -236,6 +245,7 @@ namespace SHITTYTEST
 
 
         public void newUser(string name, string username, string pass, string group,  string permakey)
+            //Добавить юзера
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -249,29 +259,38 @@ namespace SHITTYTEST
                 }
                 else
                 {
-                    if (permakey != null)
+                    if (permakey != null && permakey != "")
                     {
                         acc = pkdec(permakey);
                     }
-                    var user = new user { Username = username, Password = pass, Name = name, Group = group, Permissions = acc };
+                    else acc = user.permtype.studen;
+                    var User = new user { Username = username, Password = pass, Name = name, Group = group, Permissions = acc };
+                    users.Insert(User);
+                }
+            }
+        }
+
+        public void addUser(string name, string username, string pass, string group, user.permtype perms)
+        //Добавить юзера
+        {
+            // открывает базу данных, если ее нет - то создает
+            using (var db = new LiteDatabase(@"main.db"))
+            {
+                // Получаем коллекцию
+                var users = db.GetCollection<user>("Users");
+                if (getUser(username) != null)
+                {
+                    MessageBox.Show("Логин занят!");
+                }
+                else
+                {
+                    var user = new user { Username = username, Password = pass, Name = name, Group = group, Permissions = perms };
                     users.Insert(user);
                 }
-                //microsoft.Users = new List<User> { new User { Name = "Bill Gates" } };
-                
-                // Добавляем компанию в коллекцию
+            }
+        }
 
-                // Обновляем документ в коллекции
-                //microsoft.Name = "Microsoft Inc.";
-                //col.Update(microsoft);
-
-                /*
-                var google = new Company { Name = "Google" };
-                google.Users = new List<User> { new User { Name = "Larry Page" } };
-                col.Insert(google);
-                */
-            } }
-
-        public user login (string username, string pass)
+        public user login (string username, string pass) //Проверка Логин+пароль
         {
             user user = getUser(username);
             if (user != null && user.Username == username)
@@ -294,7 +313,7 @@ namespace SHITTYTEST
             }
         }
         
-        public user getUser(string username)
+        public user getUser(string username) //Возвращает юзера
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -314,7 +333,28 @@ namespace SHITTYTEST
             }
         }
 
-        public List<user> getUsers(string username)
+        public user getUserByID(string uid) //Возвращает юзера
+        {
+            // открывает базу данных, если ее нет - то создает
+            using (var db = new LiteDatabase(@"main.db"))
+            {
+                // Получаем коллекцию
+                var users = db.GetCollection<user>("Users");
+
+                // Индексируем документ по определенному свойству
+                users.EnsureIndex(x => x.Username);
+                Guid tid = new Guid(uid);
+                var vuser = users.Find(x => x.Id.Equals(tid));
+                user user = null;
+                foreach (user fuser in vuser)
+                {
+                    user = fuser;
+                }
+                return user;
+            }
+        }
+
+        public List<user> getUsers(string username) //Тож самое, но лист
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -334,7 +374,42 @@ namespace SHITTYTEST
             }
         }
 
-        public List<user> getUsersByGroup(string group)
+        public string[][] getUsersString() //Тож самое, но массив строк
+        {
+            // открывает базу данных, если ее нет - то создает
+            using (var db = new LiteDatabase(@"main.db"))
+            {
+                // Получаем коллекцию
+                var users = db.GetCollection<user>("Users");
+
+                // Индексируем документ по определенному свойству
+                users.EnsureIndex(x => x.Username);
+                var vuser = users.FindAll();
+                List<user> Users = new List<user>();
+                int r = 0;
+                foreach (user fuser in vuser)
+                {
+                    Users.Add(fuser);
+                    r++;
+                }
+                string[][] msv = new string[r][]; // 2м масив, 1размер - счетчик
+                for (int x = 0; x < r; x++)
+                {
+                    msv[x] = new string[5]; // Инициализируем 2й размер
+                }
+                for (int x = 0; x < r; x++) // забиваем массив результатами
+                {
+                    msv[x][0] = Users[x].Username;
+                    msv[x][1] = Users[x].Name;
+                    msv[x][2] = ""+Users[x].Permissions;
+                    msv[x][3] = Users[x].Password;
+                    msv[x][4] = ""+Users[x].Id;
+                }
+                return msv;
+            }
+        }
+
+        public List<user> getUsersByGroup(string group) //По группам!
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -354,7 +429,7 @@ namespace SHITTYTEST
             }
         }
 
-        public user getUserByName(string name)
+        public user getUserByName(string name) // Я позову тебя тихо по имени...
         {
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
@@ -374,8 +449,9 @@ namespace SHITTYTEST
             }
         }
 
-        public void setUser(string username, string password)
-        {
+        public void setUser(Guid userid, user upduser) 
+            // Сменить Логин+пароль, форму пилить лень, но метод же есть? Щитаеца!
+        { 
             // открывает базу данных, если ее нет - то создает
             using (var db = new LiteDatabase(@"main.db"))
             {
@@ -383,19 +459,33 @@ namespace SHITTYTEST
                 var users = db.GetCollection<user>("Users");
 
                 // Индексируем документ по определенному свойству
-                users.EnsureIndex(x => x.Username);
-                var vuser = users.Find(x => x.Username.Equals(username));
-                user user = null;
-                foreach (user fuser in vuser)
-                {
-                    user = fuser;
-                }
-                user.Password = password;
-                users.Update(user);
+                users.EnsureIndex(x => x.Id);
+                var vuser = users.Find(x => x.Id.Equals(userid));
+                users.Update(upduser);
             }
         }
 
-        public static string Translit(string str)
+        public void delUser(Guid did) // УДОЛЯИТ пользователей
+        {
+            // открывает базу данных, если ее нет - то создает
+            using (var db = new LiteDatabase(@"main.db"))
+            {
+                // Получаем коллекцию
+                var Users = db.GetCollection<user>("Users");
+
+                // Индексируем документ по определенному свойству
+                Users.EnsureIndex(x => x.Id);
+                var vUser = Users.Find(x => x.Id.Equals(did));
+                user User = null;
+                foreach (user fUser in vUser)
+                {
+                    User = fUser;
+                }
+                Users.Delete(x => x.Id.Equals(did));
+            }
+        }
+
+        public static string Translit(string str) //Страшная махина для транслитерации, не моё.
         {
             string[] lat_up = { "A", "B", "V", "G", "D", "E", "Yo", "Zh", "Z", "I", "Y", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "F", "Kh", "Ts", "Ch", "Sh", "Shch", "\"", "Y", "'", "E", "Yu", "Ya" };
             string[] lat_low = { "a", "b", "v", "g", "d", "e", "yo", "zh", "z", "i", "y", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "f", "kh", "ts", "ch", "sh", "shch", "\"", "y", "'", "e", "yu", "ya" };
@@ -410,32 +500,3 @@ namespace SHITTYTEST
         }
     }
 }
-        /*
-
-            }
-            // Получаем все документы
-            var result = col.FindAll();
-                foreach (Company c in result)
-                {
-                    Console.WriteLine(c.Name);
-                    foreach (User u in c.Users)
-                        Console.WriteLine(u.Name);
-                    Console.WriteLine();
-                }
-
-                // Индексируем документ по определенному свойству
-                col.EnsureIndex(x => x.Name);
-
-                col.Delete(x => x.Name.Equals("Google"));
-
-                Console.WriteLine("После удаления Google");
-                result = col.FindAll();
-                foreach (Company c in result)
-                {
-                    Console.WriteLine(c.Name);
-                    foreach (User u in c.Users)
-                        Console.WriteLine(u.Name);
-                    Console.WriteLine();
-                }
-        }
-        */

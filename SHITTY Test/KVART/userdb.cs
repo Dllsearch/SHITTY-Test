@@ -7,53 +7,39 @@ using LiteDB;
 
 namespace SHITTYTEST
 {
-
-    /*
-    public class Company
-    {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public List<User> Users { get; set; }
-    }
-    public class User
-    {
-        public string Name { get; set; }
-        public string Position { get; set; }
-    }
-    */
     [Serializable]
     class userdb
     {
         public Guid Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Name { get; set; }
+        public string Username { get; set; } // Ник
+        public string Password { get; set; } // Пароль
+        public string Name { get; set; } // ФИО
         public permtype Permissions { get; set; }
-        public enum permtype
+        public enum permtype // Типы прав доступа
         {
             admin,
             teacher,
             studen,
         }
 
-        public void newone(string username, string password, string name)
+        public void newone(string username, string password, string name) // Создать ещё одну запись
         {
             Username = username;
             Password = password;
             Name = name;
         }
-
-        public void callin()
+        // Дальше пустые неиспользуемые функции
+        public void callin() // При вызове
         {
 
         }
 
-        private void WkaT()
+        private void WkaT() // При запросе
         {
 
         }
 
-        public void login(string lgn, string pass)
+        public void login(string lgn, string pass) // Логин
         {
 
         }

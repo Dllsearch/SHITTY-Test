@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SHITTYTEST
 {
-    public partial class Form4 : Form
+    public partial class testerv3offline : Form
     {
 
         Random rand = new Random();
@@ -223,7 +223,7 @@ namespace SHITTYTEST
             }
         }
 
-        public Form4(string Link)
+        public testerv3offline(string Link)
         {
             link = Link;
             InitializeComponent();

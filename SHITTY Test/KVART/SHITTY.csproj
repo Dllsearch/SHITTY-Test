@@ -68,11 +68,29 @@
   <ItemGroup>
     <Compile Include="clist.cs" />
     <Compile Include="dbworker.cs" />
-    <Compile Include="F1BKP.cs">
+    <Compile Include="CurrentUserEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F1BKP.Designer.cs">
-      <DependentUpon>F1BKP.cs</DependentUpon>
+    <Compile Include="CurrentUserEdit.Designer.cs">
+      <DependentUpon>CurrentUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newU.Designer.cs">
+      <DependentUpon>newU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testerv3offline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testerv3offline.designer.cs">
+      <DependentUpon>testerv3offline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserEditor.Designer.cs">
+      <DependentUpon>UserEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="results.cs" />
     <Compile Include="testerv3.cs">
@@ -80,12 +98,6 @@
     </Compile>
     <Compile Include="testerv3.Designer.cs">
       <DependentUpon>testerv3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
     <Compile Include="PicView.cs">
       <SubType>Form</SubType>
@@ -166,8 +178,17 @@
     </Compile>
     <Compile Include="userdb.cs" />
     <Compile Include="user.cs" />
-    <EmbeddedResource Include="F1BKP.resx">
-      <DependentUpon>F1BKP.cs</DependentUpon>
+    <EmbeddedResource Include="CurrentUserEdit.resx">
+      <DependentUpon>CurrentUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newU.resx">
+      <DependentUpon>newU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testerv3offline.resx">
+      <DependentUpon>testerv3offline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserEditor.resx">
+      <DependentUpon>UserEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testerv1.resx">
       <DependentUpon>testerv1.cs</DependentUpon>
@@ -177,9 +198,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="testerv3.resx">
       <DependentUpon>testerv3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PicView.resx">
       <DependentUpon>PicView.cs</DependentUpon>

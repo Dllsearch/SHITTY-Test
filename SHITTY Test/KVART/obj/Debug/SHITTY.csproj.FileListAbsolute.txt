@@ -118,11 +118,9 @@ C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\bin\Debug\SHITTY TE
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\bin\Debug\LiteDB.dll
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\bin\Debug\LiteDB.xml
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY.csprojAssemblyReference.cache
-C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.F1BKP.resources
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.testerv1.resources
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Editor.resources
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.testerv3.resources
-C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Form4.resources
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.PicView.resources
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.TestDesk.resources
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.Login.resources
@@ -139,3 +137,7 @@ C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY.cs
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY.csproj.CopyComplete
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY TEST.exe
 C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTY TEST.pdb
+C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.UserEditor.resources
+C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.testerv3offline.resources
+C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.CurrentUserEdit.resources
+C:\Users\root\Documents\GitHub\SHITTY-Test\SHITTY Test\KVART\obj\Debug\SHITTYTEST.newU.resources

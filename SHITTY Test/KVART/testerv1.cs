@@ -42,12 +42,6 @@ namespace SHITTYTEST
             writetype = wtype;
             checkTest = chktst;
             answ = new string[questions];
-            /*
-            for (int opa=0; opa < questions; opa++)
-            {
-                answ[opa] = "X";
-            }
-            */
             askaq = new string[questions];
             wakeUpNeo();
             testParser(test);
@@ -57,7 +51,7 @@ namespace SHITTYTEST
             label1.Text = askaq[i];
         }
         
-        private int testParser(string tsst)
+        private int testParser(string tsst) // Конвертирует тест в1 и в2 в в3
         {
             FileStream MainFile = new FileStream(tsst, FileMode.Open, FileAccess.Read);
             StreamReader file = new StreamReader(MainFile, Encoding.GetEncoding(1251));
@@ -104,7 +98,7 @@ namespace SHITTYTEST
             return 0;
         }
 
-        void answersVisibler(int qstamnt, int answtype)
+        void answersVisibler(int qstamnt, int answtype) // Скрывает/показывает вопросы
         {
             for (int q=0; q < 8; q++)
             {
@@ -146,7 +140,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // Сохр+выход
         {
             if ( i<questions && MessageBox.Show(this, "Если вы прекратите сейчас, то ответы буду сохранены в файл.", "ВНИМАНИЕ!!!", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {
@@ -181,10 +175,10 @@ namespace SHITTYTEST
             }
         }
 
-        RadioButton[] radioButtons;
-        CheckBox[] checkBoxes;
+        RadioButton[] radioButtons; // Переключатели
+        CheckBox[] checkBoxes; // Галоочки
 
-        void wakeUpNeo()
+        void wakeUpNeo() // Забивает элементы формы в массив
         {
             RadioButton[] radioButtonss =
                 {
@@ -212,7 +206,7 @@ namespace SHITTYTEST
             checkBoxes = checkBoxx;
         }
 
-        void radioShit()
+        void radioShit() // Проверка и запись ответа (для перекл)
         {
             int q = 0;
             while (q < answers[i])
@@ -226,7 +220,7 @@ namespace SHITTYTEST
             }
         }
 
-        void checkBoxShit()
+        void checkBoxShit() // Проверка и запись ответа (для галочек)
         {
             int q = 0;
             while (q < answers[i])
@@ -236,12 +230,12 @@ namespace SHITTYTEST
             }
         }
 
-        void textBoxShit ()
+        void textBoxShit () // Запись ответа для текста
         {
             answ[i] = textBox1.Text;
         }
 
-        void writeIt(int q)
+        void writeIt(int q) // Запись ответов
         {
             if (writetype)
             {
@@ -268,7 +262,7 @@ namespace SHITTYTEST
             }
         }
 
-        int checkIt()
+        int checkIt() // проверка и запись ответов
         {
             if (qtypes[i] == radio) { radioShit(); return radio; }
             else if (qtypes[i] == check) { checkBoxShit(); return check; }
@@ -280,7 +274,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // Переход к сл. вопросу
         {
             if (i <= questions)
             {

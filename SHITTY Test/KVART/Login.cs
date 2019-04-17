@@ -16,7 +16,7 @@ namespace SHITTYTEST
             InitializeComponent();
         }
         
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //login
         {
             DBworker DBworker = new DBworker();
             user user = DBworker.login(textBox1.Text, textBox2.Text);
@@ -61,7 +61,7 @@ namespace SHITTYTEST
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // Регистрация
         {
             register register = new register();
             register.ShowDialog();
@@ -72,7 +72,7 @@ namespace SHITTYTEST
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // ОффМод (без логина и доступа к бд)
         {
             offline offline = new offline();
             Hide();
