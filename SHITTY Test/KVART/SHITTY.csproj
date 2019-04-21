@@ -80,6 +80,8 @@
     <Compile Include="newU.Designer.cs">
       <DependentUpon>newU.cs</DependentUpon>
     </Compile>
+    <Compile Include="NOTelementsB.cs" />
+    <Compile Include="NotOrdinalTestB.cs" />
     <Compile Include="testerv3offline.cs">
       <SubType>Form</SubType>
     </Compile>

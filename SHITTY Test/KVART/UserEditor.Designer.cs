@@ -30,6 +30,9 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -44,12 +47,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Логин = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ФИО = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Права = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Пароль = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -92,6 +93,40 @@
             this.groupBox6.TabIndex = 50;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Поиск пользователей";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(287, 69);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(198, 20);
+            this.textBox1.TabIndex = 56;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(243, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Пароль";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Администратор",
+            "Преподаватель",
+            "Студент",
+            "---",
+            "Владелец (DBG)"});
+            this.comboBox1.Location = new System.Drawing.Point(51, 69);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(186, 21);
+            this.comboBox1.TabIndex = 54;
             // 
             // button2
             // 
@@ -188,7 +223,6 @@
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(52, 43);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(185, 20);
@@ -217,6 +251,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Логин,
             this.ФИО,
+            this.Group,
             this.Права,
             this.Пароль,
             this.Id});
@@ -239,6 +274,12 @@
             this.ФИО.Name = "ФИО";
             this.ФИО.ReadOnly = true;
             // 
+            // Group
+            // 
+            this.Group.HeaderText = "Group";
+            this.Group.Name = "Group";
+            this.Group.ReadOnly = true;
+            // 
             // Права
             // 
             this.Права.HeaderText = "Permissions";
@@ -256,40 +297,6 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Администратор",
-            "Преподаватель",
-            "Студент",
-            "---",
-            "Владелец (DBG)"});
-            this.comboBox1.Location = new System.Drawing.Point(51, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(186, 21);
-            this.comboBox1.TabIndex = 54;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(243, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Пароль";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(287, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 20);
-            this.textBox1.TabIndex = 56;
             // 
             // UserEditor
             // 
@@ -321,15 +328,16 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Логин;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ФИО;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Права;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Пароль;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Логин;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ФИО;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Group;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Права;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Пароль;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }

@@ -30,8 +30,8 @@ namespace SHITTYTEST
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("" + dataGridView1.CurrentRow.Cells[4].Value);
-            CurrentUserEdit ed = new CurrentUserEdit(DBworker.getUserByID("" + dataGridView1.CurrentRow.Cells[4].Value), false);
+            MessageBox.Show("" + dataGridView1.CurrentRow.Cells[5].Value);
+            CurrentUserEdit ed = new CurrentUserEdit(DBworker.getUserByID("" + dataGridView1.CurrentRow.Cells[5].Value), false);
             ed.ShowDialog();
             updResultsTable();
         }
@@ -56,7 +56,7 @@ namespace SHITTYTEST
                 if (
                     (resultsmx[x][0].IndexOf(textBox7.Text, StringComparison.OrdinalIgnoreCase) != -1)
                     && (resultsmx[x][1].IndexOf(textBox5.Text, StringComparison.OrdinalIgnoreCase) != -1)
-                    //&& (resultsmx[x][2].IndexOf(textBox7.Text, StringComparison.OrdinalIgnoreCase) != -1)
+                    && (resultsmx[x][2].IndexOf(textBox4.Text, StringComparison.OrdinalIgnoreCase) != -1)
                     //&& (resultsmx[x][4].IndexOf(textBox6.Text, StringComparison.OrdinalIgnoreCase) != -1)
                     )
                 {

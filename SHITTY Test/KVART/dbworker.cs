@@ -395,15 +395,16 @@ namespace SHITTYTEST
                 string[][] msv = new string[r][]; // 2м масив, 1размер - счетчик
                 for (int x = 0; x < r; x++)
                 {
-                    msv[x] = new string[5]; // Инициализируем 2й размер
+                    msv[x] = new string[6]; // Инициализируем 2й размер
                 }
                 for (int x = 0; x < r; x++) // забиваем массив результатами
                 {
                     msv[x][0] = Users[x].Username;
                     msv[x][1] = Users[x].Name;
-                    msv[x][2] = ""+Users[x].Permissions;
-                    msv[x][3] = Users[x].Password;
-                    msv[x][4] = ""+Users[x].Id;
+                    msv[x][2] = Users[x].Group;
+                    msv[x][3] = ""+Users[x].Permissions;
+                    msv[x][4] = Users[x].Password;
+                    msv[x][5] = ""+Users[x].Id;
                 }
                 return msv;
             }
