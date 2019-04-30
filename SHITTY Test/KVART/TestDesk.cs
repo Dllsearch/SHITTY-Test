@@ -222,7 +222,6 @@ namespace SHITTYTEST
                     }
                     row++;
                 }
-                else MessageBox.Show("СОВПАДЕНИЙ НЕ НАЙДЕНО");
             }
         }
 
